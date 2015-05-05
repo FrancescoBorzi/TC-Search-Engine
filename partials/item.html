@@ -9,7 +9,9 @@
         <th class="text-center">NPC ID</th>
       </thead>
       <tbody>
-        <tr ng-repeat="vendor in vendors">{{ vendor.entry }}</tr>
+        <tr ng-repeat="vendor in vendors">
+          <td><a ng-href="./#/npc/{{ vendor.entry }}">{{ vendor.entry }}</a></td>
+        </tr>
       </tbody>
     </table>
   </tab>
@@ -26,7 +28,7 @@
       </thead>
       <tbody>
         <tr ng-repeat="npcLoot in npcLoots">
-          <td>{{ npcLoot.Entry }}</td>
+          <td><a ng-href="./#/npc/{{ npcLoot.Entry }}">{{ npcLoot.Entry }}</a></td>
           <td>{{ npcLoot.Reference }}</td>
           <td>{{ npcLoot.Chance }}</td>
           <td>{{ npcLoot.QuestRequired }}</td>
@@ -50,7 +52,7 @@
       </thead>
       <tbody>
         <tr ng-repeat="skinningLoot in skinningLoots">
-          <td>{{ skinningLoot.Entry }}</td>
+          <td><a ng-href="./#/npc/{{ skinningLoot.Entry }}">{{ skinningLoot.Entry }}</a></td>
           <td>{{ skinningLoot.Reference }}</td>
           <td>{{ skinningLoot.Chance }}</td>
           <td>{{ skinningLoot.QuestRequired }}</td>
@@ -74,7 +76,7 @@
       </thead>
       <tbody>
         <tr ng-repeat="gameobjectLoot in gameobjectLoots">
-          <td>{{ gameobjectLoot.Entry }}</td>
+          <td><a ng-href="./#/npc/{{ gameobjectLoot.Entry }}">{{ gameobjectLoot.Entry }}</a></td>
           <td>{{ gameobjectLoot.Reference }}</td>
           <td>{{ gameobjectLoot.Chance }}</td>
           <td>{{ gameobjectLoot.QuestRequired }}</td>

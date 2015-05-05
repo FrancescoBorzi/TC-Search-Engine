@@ -24,7 +24,7 @@
       .success(function(data, status, header, config) {
 
       if (data.length > 0) {
-        $scope.vendor = data;
+        $scope.vendors = data;
       } else {
         // TODO
       }
