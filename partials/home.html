@@ -10,30 +10,75 @@
 
   <br>
 
-  <div class="panel panel-primary hidden" id="item-panel">
+  <div class="panel panel-primary hidden" id="item-panel" style="margin: auto; max-width: 800px; margin-top: 10px; ">
     <div class="panel-heading">
       <h3 class="panel-title">Items</h3>
     </div>
     <div class="panel-body">
-      TODO
+      <table class="table">
+        <thead>
+          <th class="text-center">ID</th>
+          <th class="text-center">Name</th>
+          <th class="text-center">Required Level</th>
+          <th class="text-center">Item Level</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in items" style="pointer:cursor">
+            <td class="text-center"><a ng-href="./#/item/{{ item.entry }}">{{ item.entry }}</a></td>
+            <td class="text-center"><a ng-href="./#/item/{{ item.entry }}">{{ item.name }}</a></td>
+            <td>{{ item.RequiredLevel }}</td>
+            <td>{{ item.ItemLevel }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <div class="panel panel-success hidden" id="npc-panel">
+  <div class="panel panel-success hidden" id="npc-panel" style="margin: auto; max-width: 800px; margin-top: 10px; ">
     <div class="panel-heading">
       <h3 class="panel-title">NPCs</h3>
     </div>
     <div class="panel-body">
-      TODO
+      <table class="table">
+        <thead>
+          <th class="text-center">ID</th>
+          <th class="text-center">Name</th>
+          <th class="text-center">Subname</th>
+          <th class="text-center">MinLevel</th>
+          <th class="text-center">MaxLevel</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="npc in npcs" style="pointer:cursor">
+            <td class="text-center"><a ng-href="./#/npc/{{ npc.entry }}">{{ npc.entry }}</a></td>
+            <td class="text-center"><a ng-href="./#/npc/{{ npc.entry }}">{{ npc.name }}</a></td>
+            <td>{{ npc.subname }}</td>
+            <td>{{ npc.minlevel }}</td>
+            <td>{{ npc.maxlevel }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <div class="panel panel-warning hidden" id="quest-panel">
+  <div class="panel panel-warning hidden" id="quest-panel" style="margin: auto; max-width: 800px; margin-top: 10px; ">
     <div class="panel-heading">
       <h3 class="panel-title">Quests</h3>
     </div>
     <div class="panel-body">
-      TODO
+      <table class="table">
+        <thead>
+          <th class="text-center">ID</th>
+          <th class="text-center">Title</th>
+          <th class="text-center">MinLevel</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="quest in quests" style="pointer:cursor">
+            <td class="text-center"><a ng-href="./#/quest/{{ quest.Id }}">{{ quest.Id }}</a></td>
+            <td class="text-center"><a ng-href="./#/quest/{{ quest.Id }}">{{ quest.Title }}</a></td>
+            <td>{{ quest.MinLevel }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
