@@ -3,6 +3,20 @@
 
   app.controller("HomeController", function($scope, $http) {
 
+    var request = app.api + "version";
+
+    $http.get( request )
+      .success(function(data, status, header, config) {
+
+      if (data.length > 0)
+        $scope.version = data[0];
+      else
+        console.log("Error while retrieving database version.");
+    })
+      .error(function(data, status, header, config) {
+      console.log("Error in $http.get request: " + request);
+    });
+
     var itemPanel = angular.element(document.querySelector("#item-panel"));
     var npcPanel = angular.element(document.querySelector("#npc-panel"));
     var questPanel = angular.element(document.querySelector("#quest-panel"));
@@ -27,7 +41,7 @@
       noQuestsFound.addClass("hidden");
 
       /* looking for items... */
-      var request = app.api + "item/template/" + searchstr;
+      request = app.api + "item/template/" + searchstr;
 
       $http.get( request )
         .success(function(data, status, header, config) {
