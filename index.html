@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="engine">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,11 @@
     <script src="js/lib/angular-ui-router.min.js"></script>
     <script src="js/lib/ui-bootstrap.min.js"></script>
     <script src="js/app/engine.js"></script>
+    <script src="js/app/config.js"></script>
+    <script src="js/app/npc.js"></script>
+    <script src="js/app/item.js"></script>
+    <script src="js/app/quest.js"></script>
+
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -26,7 +31,9 @@
   <body>
 
     <div class="container">
-
+      <p class="h1 text-center">TrinityCore Database Search Engine</p>
+      <p class="h4 text-center">Powered by <a href="https://github.com/ShinDarth/TC-JSON-API">TrinityCore JSON REST API</a></p>
+      <div ui-view></div>
     </div>
   </body>
 </html>
