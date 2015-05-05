@@ -11,7 +11,7 @@
       $scope.template = data[0];
     })
     .error(function(data, status, header, config) {
-      console.log("Error in $http.get request: " + request);
+      console.log("Error in CREATURE TEMPLATE $http.get request");
     });
 
   });

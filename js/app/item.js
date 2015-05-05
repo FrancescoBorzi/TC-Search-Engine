@@ -11,11 +11,11 @@
       if (data.length > 0) {
         $scope.template = data[0];
       } else {
-        console.log("Error retrieving item template: " + request);
+        console.log("Error retrieving item template");
       }
     })
       .error(function(data, status, header, config) {
-      console.log("Error in $http.get request: " + request);
+      console.log("Error in ITEM TEMPLATE $http.get request");
     });
 
     request = app.api + "vendor/item/" + $stateParams.id;
@@ -30,7 +30,7 @@
       }
     })
       .error(function(data, status, header, config) {
-      console.log("Error in $http.get request: " + request);
+      console.log("Error in NPC VENDOR $http.get request");
     });
 
     request = app.api + "loot/creature/item/" + $stateParams.id;
@@ -45,7 +45,7 @@
       }
     })
       .error(function(data, status, header, config) {
-      console.log("Error in $http.get request: " + request);
+      console.log("Error in CREATURE LOOT $http.get request");
     });
 
     request = app.api + "loot/skinning/item/" + $stateParams.id;
@@ -60,7 +60,7 @@
       }
     })
       .error(function(data, status, header, config) {
-      console.log("Error in $http.get request: " + request);
+      console.log("Error in SKINNING LOOT $http.get request");
     });
 
     request = app.api + "loot/gameobject/item/" + $stateParams.id;
@@ -75,7 +75,7 @@
       }
     })
       .error(function(data, status, header, config) {
-      console.log("Error in $http.get request: " + request);
+      console.log("Error in GAMEOBJECT LOOT $http.get request");
     });
 
   });

@@ -14,7 +14,7 @@
         console.log("Error while retrieving database version.");
     })
       .error(function(data, status, header, config) {
-      console.log("Error in $http.get request: " + request);
+      console.log("Error in VERSION $http.get request");
     });
 
     var itemPanel = angular.element(document.querySelector("#item-panel"));
@@ -55,7 +55,7 @@
 
       })
         .error(function(data, status, header, config) {
-        console.log("Error in $http.get request: " + request);
+        console.log("Error in ITEM $http.get");
       });
 
       /* looking for NPCs... */
@@ -73,7 +73,7 @@
 
       })
         .error(function(data, status, header, config) {
-        console.log("Error in $http.get request: " + request);
+        console.log("Error in NPC $http.get");
       });
 
       /* looking for Quests... */
@@ -91,7 +91,7 @@
 
       })
         .error(function(data, status, header, config) {
-        console.log("Error in $http.get request: " + request);
+        console.log("Error in QUEST $http.get");
       });
 
     };
