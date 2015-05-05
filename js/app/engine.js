@@ -13,6 +13,11 @@
 
     $scope.search = function(searchstr) {
 
+      if (typeof searchstr === 'undefined' || searchstr.length < 4) {
+        alert("Please insert a string of at least 4 characters.");
+        return;
+      }
+
       itemPanel.addClass("hidden");
       npcPanel.addClass("hidden");
       questPanel.addClass("hidden");
