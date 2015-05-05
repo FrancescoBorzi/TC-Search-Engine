@@ -1,3 +1,89 @@
 <a href="./#/" class="btn btn-primary btn-sm">&#8592;  Home</a>
 
 <p class="h2 text-center">[Item] <strong>{{ template.name }}</strong> (<strong>{{template.entry}}</strong>)</p>
+<br>
+<tabset>
+  <tab heading="Sold by NPC">
+    <table class="table table-striped">
+      <thead>
+        <th class="text-center">NPC ID</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="vendor in vendors">{{ vendor.entry }}</tr>
+      </tbody>
+    </table>
+  </tab>
+  <tab heading="Dropped by NPC">
+    <table class="table table-striped">
+      <thead>
+        <th class="text-center">NPC ID</th>
+        <th class="text-center">Reference</th>
+        <th class="text-center">Chance</th>
+        <th class="text-center">Quest Required ID</th>
+        <th class="text-center">Group ID</th>
+        <th class="text-center">Min Count</th>
+        <th class="text-center">Max Count</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="npcLoot in npcLoots">
+          <td>{{ npcLoot.Entry }}</td>
+          <td>{{ npcLoot.Reference }}</td>
+          <td>{{ npcLoot.Chance }}</td>
+          <td>{{ npcLoot.QuestRequired }}</td>
+          <td>{{ npcLoot.GroupId }}</td>
+          <td>{{ npcLoot.MinCount }}</td>
+          <td>{{ npcLoot.MaxCount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </tab>
+  <tab heading="Skinned from NPC">
+    <table class="table table-striped">
+      <thead>
+        <th class="text-center">NPC ID</th>
+        <th class="text-center">Reference</th>
+        <th class="text-center">Chance</th>
+        <th class="text-center">Quest Required ID</th>
+        <th class="text-center">Group ID</th>
+        <th class="text-center">Min Count</th>
+        <th class="text-center">Max Count</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="skinningLoot in skinningLoots">
+          <td>{{ skinningLoot.Entry }}</td>
+          <td>{{ skinningLoot.Reference }}</td>
+          <td>{{ skinningLoot.Chance }}</td>
+          <td>{{ skinningLoot.QuestRequired }}</td>
+          <td>{{ skinningLoot.GroupId }}</td>
+          <td>{{ skinningLoot.MinCount }}</td>
+          <td>{{ skinningLoot.MaxCount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </tab>
+  <tab heading="Dropped by Gameobject">
+    <table class="table table-striped">
+      <thead>
+        <th class="text-center">GameObject ID</th>
+        <th class="text-center">Reference</th>
+        <th class="text-center">Chance</th>
+        <th class="text-center">Quest Required ID</th>
+        <th class="text-center">Group ID</th>
+        <th class="text-center">Min Count</th>
+        <th class="text-center">Max Count</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="gameobjectLoot in gameobjectLoots">
+          <td>{{ gameobjectLoot.Entry }}</td>
+          <td>{{ gameobjectLoot.Reference }}</td>
+          <td>{{ gameobjectLoot.Chance }}</td>
+          <td>{{ gameobjectLoot.QuestRequired }}</td>
+          <td>{{ gameobjectLoot.GroupId }}</td>
+          <td>{{ gameobjectLoot.MinCount }}</td>
+          <td>{{ gameobjectLoot.MaxCount }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </tab>
+</tabset>
+
