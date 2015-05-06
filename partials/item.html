@@ -7,10 +7,12 @@
     <table class="table table-striped">
       <thead>
         <th class="text-center">NPC ID</th>
+        <th class="text-center">NPC Name</th>
       </thead>
       <tbody>
         <tr ng-repeat="vendor in vendors">
           <td><a ng-href="./#/npc/{{ vendor.entry }}">{{ vendor.entry }}</a></td>
+          <td><a ng-href="./#/npc/{{ vendor.entry }}">TODO</a></td>
         </tr>
       </tbody>
     </table>
@@ -19,6 +21,7 @@
     <table class="table table-striped">
       <thead>
         <th class="text-center">NPC ID</th>
+        <th class="text-center">NPC Name</th>
         <th class="text-center">Reference</th>
         <th class="text-center">Chance</th>
         <th class="text-center">Quest Required ID</th>
@@ -29,6 +32,7 @@
       <tbody>
         <tr ng-repeat="npcLoot in npcLoots">
           <td><a ng-href="./#/npc/{{ npcLoot.Entry }}">{{ npcLoot.Entry }}</a></td>
+          <td><a ng-href="./#/npc/{{ npcLoot.Entry }}">{{ npcLoot.name }}</a></td>
           <td>{{ npcLoot.Reference }}</td>
           <td>{{ npcLoot.Chance }}</td>
           <td>{{ npcLoot.QuestRequired }}</td>
@@ -43,6 +47,7 @@
     <table class="table table-striped">
       <thead>
         <th class="text-center">NPC ID</th>
+        <th class="text-center">NPC Name</th>
         <th class="text-center">Reference</th>
         <th class="text-center">Chance</th>
         <th class="text-center">Quest Required ID</th>
@@ -53,6 +58,7 @@
       <tbody>
         <tr ng-repeat="skinningLoot in skinningLoots">
           <td><a ng-href="./#/npc/{{ skinningLoot.Entry }}">{{ skinningLoot.Entry }}</a></td>
+          <td><a ng-href="./#/npc/{{ skinningLoot.Entry }}">TODO</a></td>
           <td>{{ skinningLoot.Reference }}</td>
           <td>{{ skinningLoot.Chance }}</td>
           <td>{{ skinningLoot.QuestRequired }}</td>
@@ -67,6 +73,7 @@
     <table class="table table-striped">
       <thead>
         <th class="text-center">GameObject ID</th>
+        <th class="text-center">GameObject Name</th>
         <th class="text-center">Reference</th>
         <th class="text-center">Chance</th>
         <th class="text-center">Quest Required ID</th>
@@ -77,6 +84,7 @@
       <tbody>
         <tr ng-repeat="gameobjectLoot in gameobjectLoots">
           <td><a ng-href="./#/npc/{{ gameobjectLoot.Entry }}">{{ gameobjectLoot.Entry }}</a></td>
+          <td><a ng-href="./#/npc/{{ gameobjectLoot.Entry }}">TODO</a></td>
           <td>{{ gameobjectLoot.Reference }}</td>
           <td>{{ gameobjectLoot.Chance }}</td>
           <td>{{ gameobjectLoot.QuestRequired }}</td>
