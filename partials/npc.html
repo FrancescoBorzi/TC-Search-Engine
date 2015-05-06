@@ -2,4 +2,17 @@
 
 <p class="h2 text-center">[NPC] <strong>{{ template.name }}</strong> (<strong>{{template.entry}}</strong>)</p>
 <br>
-<p class="lead">TODO</p>
+<tabset>
+  <tab heading="Starts">
+    <table class="table table-striped">
+      <thead>
+        <th class="text-center">Quest ID</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="npcQueststarter in npcQueststarters">
+          <td><a ng-href="./#/quest/template/{{ npcQueststarter.Id }}">{{ npcQueststarter.id }}</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </tab>
+</tabset>
