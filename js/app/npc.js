@@ -20,8 +20,7 @@
     .success(function(data, status, header, config) {
       if (data.length > 0) {
         $scope.npcQueststarters = data;
-      } else {
-        // TO DO
+        angular.element(document.querySelector("#tab-npc-queststarters")).removeClass("hidden");
       }
     })
     .error(function(data, status, header, config) {
