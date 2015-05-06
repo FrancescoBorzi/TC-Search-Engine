@@ -2,7 +2,7 @@
   <form class="form-inline">
     <div class="form-group">
       <div class="input-group">
-        <input type="text" class="form-control" style="min-width: 300px" id="search" placeholder="Search for NPCs, Quests, Items..." ng-model="searchstr">
+        <input type="text" class="form-control" id="search" placeholder="Search for NPCs, Quests, Items..." ng-model="searchstr">
       </div>
     </div>
     <button type="submit" class="btn btn-primary" ng-click="search(searchstr)">Search</button>
@@ -12,7 +12,7 @@
   <p><small>Database version: <strong>{{ version.db_version }}</strong></small></p>
   <br>
 
-  <div class="panel panel-primary hidden" id="item-panel" style="margin: auto; max-width: 800px; margin-top: 10px; ">
+  <div class="panel panel-primary hidden results-panel" id="item-panel">
     <div class="panel-heading">
       <h3 class="panel-title">Items</h3>
     </div>
@@ -25,7 +25,7 @@
           <th class="text-center">Item Level</th>
         </thead>
         <tbody>
-          <tr ng-repeat="item in items" style="pointer:cursor">
+          <tr ng-repeat="item in items">
             <td class="text-center"><a ng-href="./#/item/{{ item.entry }}">{{ item.entry }}</a></td>
             <td class="text-center"><a ng-href="./#/item/{{ item.entry }}">{{ item.name }}</a></td>
             <td>{{ item.RequiredLevel }}</td>
@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <div class="panel panel-success hidden" id="npc-panel" style="margin: auto; max-width: 800px; margin-top: 10px; ">
+  <div class="panel panel-success hidden results-panel" id="npc-panel">
     <div class="panel-heading">
       <h3 class="panel-title">NPCs</h3>
     </div>
@@ -50,7 +50,7 @@
           <th class="text-center">MaxLevel</th>
         </thead>
         <tbody>
-          <tr ng-repeat="npc in npcs" style="pointer:cursor">
+          <tr ng-repeat="npc in npcs">
             <td class="text-center"><a ng-href="./#/npc/{{ npc.entry }}">{{ npc.entry }}</a></td>
             <td class="text-center"><a ng-href="./#/npc/{{ npc.entry }}">{{ npc.name }}</a></td>
             <td>{{ npc.subname }}</td>
@@ -62,7 +62,7 @@
     </div>
   </div>
 
-  <div class="panel panel-warning hidden" id="quest-panel" style="margin: auto; max-width: 800px; margin-top: 10px; ">
+  <div class="panel panel-warning hidden results-panel" id="quest-panel">
     <div class="panel-heading">
       <h3 class="panel-title">Quests</h3>
     </div>
@@ -74,7 +74,7 @@
           <th class="text-center">MinLevel</th>
         </thead>
         <tbody>
-          <tr ng-repeat="quest in quests" style="pointer:cursor">
+          <tr ng-repeat="quest in quests">
             <td class="text-center"><a ng-href="./#/quest/{{ quest.Id }}">{{ quest.Id }}</a></td>
             <td class="text-center"><a ng-href="./#/quest/{{ quest.Id }}">{{ quest.Title }}</a></td>
             <td>{{ quest.MinLevel }}</td>

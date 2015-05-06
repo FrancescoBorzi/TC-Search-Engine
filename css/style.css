@@ -1,0 +1,9 @@
+#search {
+  min-width: 300px;
+}
+
+.results-panel {
+  margin: auto;
+  max-width: 800px;
+  margin-top: 10px;
+}
