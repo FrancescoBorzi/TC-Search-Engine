@@ -27,8 +27,7 @@
 
       if (data.length > 0) {
         $scope.vendors = data;
-      } else {
-        // TODO
+        angular.element(document.querySelector("#tab-npc-vendor")).removeClass("hidden");
       }
     })
       .error(function(data, status, header, config) {
@@ -43,8 +42,7 @@
 
       if (data.length > 0) {
         $scope.npcLoots = data;
-      } else {
-        // TODO
+        angular.element(document.querySelector("#tab-npc-loot")).removeClass("hidden");
       }
     })
       .error(function(data, status, header, config) {
@@ -59,8 +57,7 @@
 
       if (data.length > 0) {
         $scope.skinningLoots = data;
-      } else {
-        // TODO
+        angular.element(document.querySelector("#tab-skinning-loot")).removeClass("hidden");
       }
     })
       .error(function(data, status, header, config) {
@@ -75,8 +72,7 @@
 
       if (data.length > 0) {
         $scope.gameobjectLoots = data;
-      } else {
-        // TODO
+        angular.element(document.querySelector("#tab-gameobject-loot")).removeClass("hidden");
       }
     })
       .error(function(data, status, header, config) {

@@ -3,7 +3,7 @@
 <p class="h2 text-center">[Item] <strong>{{ template.name }}</strong> (<strong>{{template.entry}}</strong>)</p>
 <br>
 <tabset>
-  <tab heading="Sold by NPC">
+  <tab class="hidden" id="tab-npc-vendor" heading="Sold by NPC">
     <table class="table table-striped">
       <thead>
         <th class="text-center">NPC ID</th>
@@ -17,7 +17,7 @@
       </tbody>
     </table>
   </tab>
-  <tab heading="Dropped by NPC">
+  <tab class="hidden" id="tab-npc-loot" heading="Dropped by NPC">
     <table class="table table-striped">
       <thead>
         <th class="text-center">NPC ID</th>
@@ -43,7 +43,7 @@
       </tbody>
     </table>
   </tab>
-  <tab heading="Skinned from NPC">
+  <tab class="hidden" id="tab-skinning-loot" heading="Skinned from NPC">
     <table class="table table-striped">
       <thead>
         <th class="text-center">NPC ID</th>
@@ -69,7 +69,7 @@
       </tbody>
     </table>
   </tab>
-  <tab heading="Contained in Gameobject">
+  <tab class="hidden" id="tab-gameobject-loot" heading="Contained in Gameobject">
     <table class="table table-striped">
       <thead>
         <th class="text-center">GameObject ID</th>
