@@ -83,6 +83,133 @@
       console.log("Error in GAMEOBJECT LOOT $http.get request");
     });
 
+    /* get reference loot template */
+    request = app.api + "loot/reference/item/" + $stateParams.id;
+
+    $http.get( request )
+      .success(function(data, status, header, config) {
+
+      if (data.length > 0) {
+        $scope.referenceLootsCount = data.length;
+        $scope.referenceLoots = data;
+        angular.element(document.querySelector("#tab-reference-loot")).removeClass("hidden");
+      }
+    })
+      .error(function(data, status, header, config) {
+      console.log("Error in REFERENCE LOOT $http.get request");
+    });
+
+    /* get item loot template */
+    request = app.api + "loot/item/item/" + $stateParams.id;
+
+    $http.get( request )
+      .success(function(data, status, header, config) {
+
+      if (data.length > 0) {
+        $scope.itemLootsCount = data.length;
+        $scope.itemLoots = data;
+        angular.element(document.querySelector("#tab-item-loot")).removeClass("hidden");
+      }
+    })
+      .error(function(data, status, header, config) {
+      console.log("Error in ITEM LOOT $http.get request");
+    });
+
+    /* get fishing loot template */
+    request = app.api + "loot/fishing/item/" + $stateParams.id;
+
+    $http.get( request )
+      .success(function(data, status, header, config) {
+
+      if (data.length > 0) {
+        $scope.fishingLootsCount = data.length;
+        $scope.fishingLoots = data;
+        angular.element(document.querySelector("#tab-fishing-loot")).removeClass("hidden");
+      }
+    })
+      .error(function(data, status, header, config) {
+      console.log("Error in FISHING LOOT $http.get request");
+    });
+    /* get disenchant loot template */
+    request = app.api + "loot/disenchant/item/" + $stateParams.id;
+
+    $http.get( request )
+      .success(function(data, status, header, config) {
+
+      if (data.length > 0) {
+        $scope.disenchantLootsCount = data.length;
+        $scope.disenchantLoots = data;
+        angular.element(document.querySelector("#tab-disenchant-loot")).removeClass("hidden");
+      }
+    })
+      .error(function(data, status, header, config) {
+      console.log("Error in DISENCHANT LOOT $http.get request");
+    });
+
+    /* get prospecting loot template */
+    request = app.api + "loot/prospecting/item/" + $stateParams.id;
+
+    $http.get( request )
+      .success(function(data, status, header, config) {
+
+      if (data.length > 0) {
+        $scope.prospectingLootsCount = data.length;
+        $scope.prospectingLoots = data;
+        angular.element(document.querySelector("#tab-prospecting-loot")).removeClass("hidden");
+      }
+    })
+      .error(function(data, status, header, config) {
+      console.log("Error in PROSPECTING LOOT $http.get request");
+    });
+
+    /* get milling loot template */
+    request = app.api + "loot/milling/item/" + $stateParams.id;
+
+    $http.get( request )
+      .success(function(data, status, header, config) {
+
+      if (data.length > 0) {
+        $scope.millingLootsCount = data.length;
+        $scope.millingLoots = data;
+        angular.element(document.querySelector("#tab-milling-loot")).removeClass("hidden");
+      }
+    })
+      .error(function(data, status, header, config) {
+      console.log("Error in MILLING LOOT $http.get request");
+    });
+
+    /* get pickpocketing loot template */
+    request = app.api + "loot/pickpocketing/item/" + $stateParams.id;
+
+    $http.get( request )
+      .success(function(data, status, header, config) {
+
+      if (data.length > 0) {
+        $scope.pickpocketingLootsCount = data.length;
+        $scope.pickpocketingLoots = data;
+        angular.element(document.querySelector("#tab-pickpocketing-loot")).removeClass("hidden");
+      }
+    })
+      .error(function(data, status, header, config) {
+      console.log("Error in PICKPOCKETING LOOT $http.get request");
+    });
+
+    /* get spell loot template */
+    request = app.api + "loot/spell/item/" + $stateParams.id;
+
+    $http.get( request )
+      .success(function(data, status, header, config) {
+
+      if (data.length > 0) {
+        $scope.spellLootsCount = data.length;
+        $scope.spellLoots = data;
+        angular.element(document.querySelector("#tab-spell-loot")).removeClass("hidden");
+      }
+    })
+      .error(function(data, status, header, config) {
+      console.log("Error in SPELL LOOT $http.get request");
+    });
+
   });
 
 })()
