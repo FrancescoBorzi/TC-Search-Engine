@@ -4,6 +4,10 @@ The **TrinityCore Search Engine** is a web application built with [AngularJS](ht
 
 It retrieves all datas querying the [TrinityCore JSON RESTful API](https://github.com/ShinDarth/TC-JSON-API/) and can currently show datas about **Items**, **NPCs** and **Quests**. 
 
+## Live Demo
+
+A live demo is available [here](http://usefulness.altervista.org/TC-Search-Engine/).
+
 ## Installation
 
 The application requires the [TrinityCore JSON RESTful API](https://github.com/ShinDarth/TC-JSON-API/), but it can be even in a separate machine.
