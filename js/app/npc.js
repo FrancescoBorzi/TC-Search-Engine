@@ -19,6 +19,7 @@
     $http.get( request )
     .success(function(data, status, header, config) {
       if (data.length > 0) {
+        $scope.npcQueststartersCount = data.length;
         $scope.npcQueststarters = data;
         angular.element(document.querySelector("#tab-npc-queststarters")).removeClass("hidden");
       }

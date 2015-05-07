@@ -26,6 +26,7 @@
       .success(function(data, status, header, config) {
 
       if (data.length > 0) {
+        $scope.vendorsCount = data.length;
         $scope.vendors = data;
         angular.element(document.querySelector("#tab-npc-vendor")).removeClass("hidden");
       }
@@ -41,6 +42,7 @@
       .success(function(data, status, header, config) {
 
       if (data.length > 0) {
+        $scope.npcLootsCount = data.length;
         $scope.npcLoots = data;
         angular.element(document.querySelector("#tab-npc-loot")).removeClass("hidden");
       }
@@ -56,6 +58,7 @@
       .success(function(data, status, header, config) {
 
       if (data.length > 0) {
+        $scope.skinningLootsCount = data.length;
         $scope.skinningLoots = data;
         angular.element(document.querySelector("#tab-skinning-loot")).removeClass("hidden");
       }
@@ -71,6 +74,7 @@
       .success(function(data, status, header, config) {
 
       if (data.length > 0) {
+        $scope.gameobjectLootsCount = data.length;
         $scope.gameobjectLoots = data;
         angular.element(document.querySelector("#tab-gameobject-loot")).removeClass("hidden");
       }
