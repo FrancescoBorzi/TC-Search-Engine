@@ -16,3 +16,8 @@
 .show-hide-button {
   cursor: pointer;
 }
+
+.credits {
+  font-size: 12px;
+  font-weight: 200;
+}
