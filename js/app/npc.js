@@ -31,6 +31,22 @@
       console.log("Error in CREATURE SPAWNS $http.get request");
     });
 
+    /* get npc vendors */
+    request = app.api + "vendor/creature/" + $stateParams.id;
+
+    $http.get( request )
+      .success(function(data, status, header, config) {
+
+      if (data.length > 0) {
+        $scope.vendorsCount = data.length;
+        $scope.vendors = data;
+        angular.element(document.querySelector("#tab-npc-vendor")).removeClass("hidden");
+      }
+    })
+      .error(function(data, status, header, config) {
+      console.log("Error in NPC VENDOR $http.get request");
+    });
+
     /* get creature loot template */
     request = app.api + "loot/creature/" + $stateParams.id;
 

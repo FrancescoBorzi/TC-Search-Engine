@@ -66,6 +66,20 @@
       </tbody>
     </table>
   </tab>
+  <tab class="hidden" id="tab-npc-vendor" heading="Solds ({{ vendorsCount }})">
+    <table class="table table-striped table-condensed">
+      <thead>
+        <th class="text-center">Item ID</th>
+        <th class="text-center">Item Name</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="vendor in vendors">
+          <td><a ng-href="./#/item/{{ vendor.item }}">{{ vendor.item }}</a></td>
+          <td><a ng-href="./#/item/{{ vendor.item }}">{{ vendor.name }}</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </tab>
   <tab class="hidden" id="tab-npc-loot" heading="Loot ({{ npcLootsCount }})">
     <table class="table table-striped table-condensed">
       <thead>
