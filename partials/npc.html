@@ -2,6 +2,21 @@
 
 <p class="h2 text-center">[NPC] <strong>{{ template.name }}</strong> (<strong>{{template.entry}}</strong>)</p>
 <br>
+<table class="table table-striped table-condensed table-bordered template-table">
+  <thead>
+    <tr>
+      <th class="text-center">ID</th>
+      <th class="text-center">{{template.entry}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>{{ template.name }}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
 <tabset>
   <tab class="hidden">
     <table class="table table-striped table-condensed">
