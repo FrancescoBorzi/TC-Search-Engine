@@ -17,6 +17,10 @@
       console.log("Error in VERSION $http.get request");
     });
 
+    $scope.showItems = true;
+    $scope.showNPCs = true;
+    $scope.showQuests = true;
+
     var itemPanel = angular.element(document.querySelector("#item-panel"));
     var npcPanel = angular.element(document.querySelector("#npc-panel"));
     var questPanel = angular.element(document.querySelector("#quest-panel"));

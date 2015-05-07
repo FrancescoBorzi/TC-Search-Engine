@@ -12,3 +12,7 @@
   max-width: 400px;
   margin: auto;
 }
+
+.show-hide-button {
+  cursor: pointer;
+}
