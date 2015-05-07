@@ -25,6 +25,47 @@
       </thead>
     </table>
   </tab>
+  <tab class="hidden" id="tab-npc-spawn" heading="Spawns ({{ npcSpawnsCount }})">
+    <table class="table table-striped table-condensed">
+      <thead>
+        <th class="text-center">GUID</th>
+        <th class="text-center">map</th>
+        <th class="text-center">zoneId</th>
+        <th class="text-center">areaId</th>
+        <th class="text-center">spawnMask</th>
+        <th class="text-center">phaseMask</th>
+        <th class="text-center">modelid</th>
+        <th class="text-center">equipment_id</th>
+        <th class="text-center">position_x</th>
+        <th class="text-center">position_y</th>
+        <th class="text-center">position_z</th>
+        <th class="text-center">orientation</th>
+        <th class="text-center">spawntimesecs</th>
+        <th class="text-center">spawndist</th>
+        <th class="text-center">VerifiedBuild</th>
+
+      </thead>
+      <tbody>
+        <tr ng-repeat="npcSpawn in npcSpawns">
+          <td>{{ npcSpawn.guid }}</td>
+          <td>{{ npcSpawn.map }}</td>
+          <td>{{ npcSpawn.zoneId }}</td>
+          <td>{{ npcSpawn.areaId }}</td>
+          <td>{{ npcSpawn.spawnMask }}</td>
+          <td>{{ npcSpawn.phaseMask }}</td>
+          <td>{{ npcSpawn.modelid }}</td>
+          <td>{{ npcSpawn.equipment_id }}</td>
+          <td>{{ npcSpawn.position_x }}</td>
+          <td>{{ npcSpawn.position_y }}</td>
+          <td>{{ npcSpawn.position_z }}</td>
+          <td>{{ npcSpawn.orientation }}</td>
+          <td>{{ npcSpawn.spawntimesecs }}</td>
+          <td>{{ npcSpawn.spawndist }}</td>
+          <td>{{ npcSpawn.VerifiedBuild }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </tab>
   <tab class="hidden" id="tab-npc-loot" heading="Loot ({{ npcLootsCount }})">
     <table class="table table-striped table-condensed">
       <thead>

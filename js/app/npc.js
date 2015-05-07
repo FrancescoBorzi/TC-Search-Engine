@@ -4,6 +4,7 @@
 
   app.controller("NpcController", function($scope, $stateParams, $http) {
 
+    /* get creature template */
     var request = app.api + "creature/template/" + $stateParams.id;
 
     $http.get( request )
@@ -12,6 +13,22 @@
     })
     .error(function(data, status, header, config) {
       console.log("Error in CREATURE TEMPLATE $http.get request");
+    });
+
+    /* get creature spawns */
+    request = app.api + "creature/spawn/id/" + $stateParams.id;
+
+    $http.get( request )
+      .success(function(data, status, header, config) {
+
+      if (data.length > 0) {
+        $scope.npcSpawnsCount = data.length;
+        $scope.npcSpawns = data;
+        angular.element(document.querySelector("#tab-npc-spawn")).removeClass("hidden");
+      }
+    })
+      .error(function(data, status, header, config) {
+      console.log("Error in CREATURE SPAWNS $http.get request");
     });
 
     /* get creature loot template */
