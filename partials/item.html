@@ -3,6 +3,13 @@
 <p class="h2 text-center">[Item] <strong>{{ template.name }}</strong> (<strong>{{template.entry}}</strong>)</p>
 <br>
 <tabset>
+  <tab class="hidden">
+    <table class="table table-striped table-condensed">
+      <thead>
+        <th class="text-center"><!-- Hackfix to display nothing --></th>
+      </thead>
+    </table>
+  </tab>
   <tab class="hidden" id="tab-npc-vendor" heading="Sold by NPC ({{ vendorsCount }})">
     <table class="table table-striped table-condensed">
       <thead>
