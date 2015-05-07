@@ -148,10 +148,26 @@
     <table class="table table-striped table-condensed">
       <thead>
         <th class="text-center">Quest ID</th>
+        <th class="text-center">Quest Title</th>
       </thead>
       <tbody>
         <tr ng-repeat="npcQueststarter in npcQueststarters">
-          <td><a ng-href="./#/quest/template/{{ npcQueststarter.Id }}">{{ npcQueststarter.id }}</a></td>
+          <td><a ng-href="./#/quest/{{ npcQueststarter.quest }}">{{ npcQueststarter.quest }}</a></td>
+          <td><a ng-href="./#/quest/{{ npcQueststarter.quest }}">{{ npcQueststarter.Title }}</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </tab>
+  <tab class="hidden" id="tab-npc-questenders" heading="Ends Quests ({{ npcQuestendersCount }})">
+    <table class="table table-striped table-condensed">
+      <thead>
+        <th class="text-center">Quest ID</th>
+        <th class="text-center">Quest Title</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="npcQuestender in npcQuestenders">
+          <td><a ng-href="./#/quest/{{ npcQuestender.quest }}">{{ npcQuestender.quest }}</a></td>
+          <td><a ng-href="./#/quest/{{ npcQuestender.quest }}">{{ npcQuestender.Title }}</a></td>
         </tr>
       </tbody>
     </table>

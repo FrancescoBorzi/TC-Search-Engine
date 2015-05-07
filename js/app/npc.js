@@ -91,9 +91,23 @@
       }
     })
     .error(function(data, status, header, config) {
-      console.log("Error in CREATURE TEMPLATE $http.get request");
+      console.log("Error in CREATURE QUESTSTARTER $http.get request");
     });
 
+    /* get creature questenders */
+    request = app.api + "creature/questender/id/" + $stateParams.id;
+
+    $http.get( request )
+    .success(function(data, status, header, config) {
+      if (data.length > 0) {
+        $scope.npcQuestendersCount = data.length;
+        $scope.npcQuestenders = data;
+        angular.element(document.querySelector("#tab-npc-questenders")).removeClass("hidden");
+      }
+    })
+    .error(function(data, status, header, config) {
+      console.log("Error in CREATURE QUESTENDER $http.get request");
+    });
 
   });
 
