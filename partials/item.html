@@ -35,7 +35,7 @@
           <td><a ng-href="./#/npc/{{ npcLoot.Entry }}">{{ npcLoot.name }}</a></td>
           <td>{{ npcLoot.Reference }}</td>
           <td>{{ npcLoot.Chance }}</td>
-          <td>{{ npcLoot.QuestRequired }}</td>
+          <td><a ng-href="./#/quest/{{ npcLoot.QuestRequired }}">{{ npcLoot.QuestRequired }}</a></td>
           <td>{{ npcLoot.GroupId }}</td>
           <td>{{ npcLoot.MinCount }}</td>
           <td>{{ npcLoot.MaxCount }}</td>
@@ -61,7 +61,7 @@
           <td><a ng-href="./#/npc/{{ skinningLoot.Entry }}">{{ skinningLoot.name }}</a></td>
           <td>{{ skinningLoot.Reference }}</td>
           <td>{{ skinningLoot.Chance }}</td>
-          <td>{{ skinningLoot.QuestRequired }}</td>
+          <td><a ng-href="./#/quest/{{ skinningLoot.QuestRequired }}">{{ skinningLoot.QuestRequired }}</a></td>
           <td>{{ skinningLoot.GroupId }}</td>
           <td>{{ skinningLoot.MinCount }}</td>
           <td>{{ skinningLoot.MaxCount }}</td>
@@ -87,7 +87,7 @@
           <td>{{ gameobjectLoot.name }}</td>
           <td>{{ gameobjectLoot.Reference }}</td>
           <td>{{ gameobjectLoot.Chance }}</td>
-          <td>{{ gameobjectLoot.QuestRequired }}</td>
+          <td><a ng-href="./#/quest/{{ gameobjectLoot.QuestRequired }}">{{ gameobjectLoot.QuestRequired }}</a></td>
           <td>{{ gameobjectLoot.GroupId }}</td>
           <td>{{ gameobjectLoot.MinCount }}</td>
           <td>{{ gameobjectLoot.MaxCount }}</td>
