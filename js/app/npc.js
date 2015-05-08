@@ -10,6 +10,8 @@
     $http.get( request )
     .success(function(data, status, header, config) {
       $scope.template = data[0];
+      var str = parseInt($scope.template.npcflag).toString(2);
+      $scope.template.iftrainer = str.charAt(str.length-5);
     })
     .error(function(data, status, header, config) {
       console.log("Error in CREATURE TEMPLATE $http.get request");
