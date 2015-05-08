@@ -1,5 +1,5 @@
 (function () {
-  var app = angular.module('engine', ['ui.router', 'ui.bootstrap']);
+  var app = angular.module('engine', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar']);
 
   app.controller("HomeController", function($scope, $http) {
 
