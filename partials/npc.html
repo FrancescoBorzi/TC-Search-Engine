@@ -14,6 +14,20 @@
       <td>Name</td>
       <td>{{ template.name }}</td>
     </tr>
+    <tr>
+      <td>Level</td>
+      <td>{{ template.minlevel }} - {{ template.maxlevel }}</td>
+    </tr>
+    <tr>
+      <td>Gold</td>
+      <td>{{ (template.mingold - (template.mingold | limitTo: -4)) != 0 ? ((template.mingold) - (template.mingold | limitTo: -4)) / 10000 +"g" :  "" }}
+        {{ ((template.mingold | limitTo: -4) - (template.mingold | limitTo: -2)) != 0 ? ((template.mingold | limitTo: -4) - (template.mingold | limitTo: -2)) / 100 +"s" :  "" }}
+        {{ (template.mingold | limitTo: -2) != 0 ? (template.mingold | limitTo: -2)+"c" :  "" }} -
+        {{ (template.maxgold - (template.maxgold | limitTo: -4)) != 0 ? ((template.maxgold) - (template.maxgold | limitTo: -4)) / 10000 +"g" :  "" }}
+        {{ ((template.maxgold | limitTo: -4) - (template.maxgold | limitTo: -2)) != 0 ? ((template.maxgold | limitTo: -4) - (template.maxgold | limitTo: -2)) / 100 +"s" :  "" }}
+        {{ (template.maxgold | limitTo: -2) != 0 ? (template.maxgold | limitTo: -2)+"c" :  "" }}
+      </td>
+    </tr>
   </tbody>
 </table>
 <br>

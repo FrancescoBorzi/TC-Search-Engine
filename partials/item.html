@@ -16,7 +16,10 @@
     </tr>
     <tr>
       <td>SellPrice</td>
-      <td>{{ (template.SellPrice - template.SellPrice % 10000) / 10000 }}g {{ (template.SellPrice % 10000) / 100 - (template.SellPrice % 10000) % 100 }}s {{ template.SellPrice % 100 }}b  ({{ template.SellPrice }})</td>
+      <td>{{ (template.SellPrice - (template.SellPrice | limitTo: -4)) != 0 ? ((template.SellPrice) - (template.SellPrice | limitTo: -4)) / 10000 +"g" :  "" }}
+{{ ((template.SellPrice | limitTo: -4) - (template.SellPrice | limitTo: -2)) != 0 ? ((template.SellPrice | limitTo: -4) - (template.SellPrice | limitTo: -2)) / 100 +"s" :  "" }}
+        {{ (template.SellPrice | limitTo: -2) != 0 ? (template.SellPrice | limitTo: -2)+"c" :  "" }}
+      </td>
     </tr>
   </tbody>
 </table>
