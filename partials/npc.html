@@ -21,7 +21,7 @@
 
     <tr>
       <td>Level</td>
-      <td>{{ template.minlevel }} - {{ template.maxlevel }}</td>
+      <td>{{ template.minlevel }} <span ng-show="template.minlevel != template.maxlevel">- {{ template.maxlevel }}</span></td>
     </tr>
     <tr ng-show="template.mingold != 0 && template.maxgold != 0">
       <td>Gold</td>
