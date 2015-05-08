@@ -14,11 +14,16 @@
       <td>Name</td>
       <td>{{ template.name }}</td>
     </tr>
+    <tr ng-show="template.subname != null">
+      <td>Subname</td>
+      <td>{{ template.subname }}</td>
+    </tr>
+
     <tr>
       <td>Level</td>
       <td>{{ template.minlevel }} - {{ template.maxlevel }}</td>
     </tr>
-    <tr>
+    <tr ng-show="template.mingold != 0 && template.maxgold != 0">
       <td>Gold</td>
       <td>{{ (template.mingold - (template.mingold | limitTo: -4)) != 0 ? ((template.mingold) - (template.mingold | limitTo: -4)) / 10000 +"g" :  "" }}
         {{ ((template.mingold | limitTo: -4) - (template.mingold | limitTo: -2)) != 0 ? ((template.mingold | limitTo: -4) - (template.mingold | limitTo: -2)) / 100 +"s" :  "" }}
