@@ -17,8 +17,37 @@
     <tr>
       <td>SellPrice</td>
       <td>{{ (template.SellPrice - (template.SellPrice | limitTo: -4)) != 0 ? ((template.SellPrice) - (template.SellPrice | limitTo: -4)) / 10000 +"g" :  "" }}
-{{ ((template.SellPrice | limitTo: -4) - (template.SellPrice | limitTo: -2)) != 0 ? ((template.SellPrice | limitTo: -4) - (template.SellPrice | limitTo: -2)) / 100 +"s" :  "" }}
+        {{ ((template.SellPrice | limitTo: -4) - (template.SellPrice | limitTo: -2)) != 0 ? ((template.SellPrice | limitTo: -4) - (template.SellPrice | limitTo: -2)) / 100 +"s" :  "" }}
         {{ (template.SellPrice | limitTo: -2) != 0 ? (template.SellPrice | limitTo: -2)+"c" :  "" }}
+      </td>
+    </tr>
+    <tr>
+      <td>Quality</td>
+      <td>{{ template.Quality == 0 ? "Grey Poor" : "" }}
+        {{ template.Quality == 1 ? "White Common" : "" }}
+        {{ template.Quality == 2 ? "Green Uncommon" : "" }}
+        {{ template.Quality == 3 ? "Blue Rare" : "" }}
+        {{ template.Quality == 4 ? "Purple Epic" : "" }}
+        {{ template.Quality == 5 ? "Orange Legendary" : "" }}
+        {{ template.Quality == 6 ? "Red Artifact" : "" }}
+        {{ template.Quality == 7 ? "Gold Heirloom" : "" }}</td>
+    </tr>
+    <tr ng-show="template.RequiredLevel != 0">
+      <td>RequiredLevel</td>
+      <td>
+        {{ template.RequiredLevel }}
+      </td>
+    </tr>
+    <tr ng-show="template.ItemLevel != 1">
+      <td>ItemLevel</td>
+      <td>
+        {{ template.ItemLevel }}
+      </td>
+    </tr>
+    <tr ng-show='template.description != ""'>
+      <td>Description</td>
+      <td>
+        {{ template.description }}
       </td>
     </tr>
   </tbody>
