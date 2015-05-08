@@ -15,6 +15,7 @@ The application requires the [TrinityCore JSON RESTful API](https://github.com/S
 Clone the TC-Search-Engine folder inside your web server directory:
 
 `git clone https://github.com/ShinDarth/TC-Search-Engine.git`
+
 Then copy the file **config.js.dist** to **config.js**, open it and set properly with the path of the API:
 
 `app.api = "../TC-JSON-API/public/index.php/";`
