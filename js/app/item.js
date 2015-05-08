@@ -11,6 +11,17 @@
       .success(function(data, status, header, config) {
       if (data.length > 0) {
         $scope.template = data[0];
+
+        if($scope.template.startquest != 0)
+        {
+          $http.get( app.api + "quest/template/title/" + $scope.template.startquest )
+            .success(function(data, status, header, config) {
+            $scope.queststart = data[0];
+          })
+            .error(function(data, status, header, config) {
+            console.log("Error in QUEST NAME $http.get request");
+          });
+        }
       } else {
         console.log("Error retrieving item template");
       }
