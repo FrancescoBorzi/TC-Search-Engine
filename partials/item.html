@@ -23,14 +23,7 @@
     </tr>
     <tr>
       <td>Quality</td>
-      <td>{{ template.Quality == 0 ? "Grey Poor" : "" }}
-        {{ template.Quality == 1 ? "White Common" : "" }}
-        {{ template.Quality == 2 ? "Green Uncommon" : "" }}
-        {{ template.Quality == 3 ? "Blue Rare" : "" }}
-        {{ template.Quality == 4 ? "Purple Epic" : "" }}
-        {{ template.Quality == 5 ? "Orange Legendary" : "" }}
-        {{ template.Quality == 6 ? "Red Artifact" : "" }}
-        {{ template.Quality == 7 ? "Gold Heirloom" : "" }}</td>
+      <td>{{ template.QualityText }}</td>
     </tr>
     <tr ng-show="template.RequiredLevel != 0">
       <td>RequiredLevel</td>
@@ -99,7 +92,7 @@
           <td><a ng-href="./#/npc/{{ npcLoot.Entry }}">{{ npcLoot.name }}</a></td>
           <td>{{ npcLoot.Reference }}</td>
           <td>{{ npcLoot.Chance }}</td>
-          <td><a ng-href="./#/quest/{{ npcLoot.QuestRequired }}">{{ npcLoot.QuestRequired }}</a></td>
+          <td>{{ npcLoot.QuestRequired == 0 ? "No" : "Yes" }}</td>
           <td>{{ npcLoot.GroupId }}</td>
           <td>{{ npcLoot.MinCount }}</td>
           <td>{{ npcLoot.MaxCount }}</td>
@@ -125,7 +118,7 @@
           <td><a ng-href="./#/npc/{{ skinningLoot.Entry }}">{{ skinningLoot.name }}</a></td>
           <td>{{ skinningLoot.Reference }}</td>
           <td>{{ skinningLoot.Chance }}</td>
-          <td><a ng-href="./#/quest/{{ skinningLoot.QuestRequired }}">{{ skinningLoot.QuestRequired }}</a></td>
+          <td>{{ skinningLoot.QuestRequired == 0 ? "No" : "Yes" }}</td>
           <td>{{ skinningLoot.GroupId }}</td>
           <td>{{ skinningLoot.MinCount }}</td>
           <td>{{ skinningLoot.MaxCount }}</td>
@@ -151,7 +144,7 @@
           <td>{{ gameobjectLoot.name }}</td>
           <td>{{ gameobjectLoot.Reference }}</td>
           <td>{{ gameobjectLoot.Chance }}</td>
-          <td><a ng-href="./#/quest/{{ gameobjectLoot.QuestRequired }}">{{ gameobjectLoot.QuestRequired }}</a></td>
+          <td>{{ gameobjectLoot.QuestRequired == 0 ? "No" : "Yes" }}</td>
           <td>{{ gameobjectLoot.GroupId }}</td>
           <td>{{ gameobjectLoot.MinCount }}</td>
           <td>{{ gameobjectLoot.MaxCount }}</td>
@@ -175,7 +168,7 @@
           <td>{{ referenceLoot.Entry }}</td>
           <td>{{ referenceLoot.Reference }}</td>
           <td>{{ referenceLoot.Chance }}</td>
-          <td><a ng-href="./#/quest/{{ referenceLoot.QuestRequired }}">{{ referenceLoot.QuestRequired }}</a></td>
+          <td>{{ referenceLoot.QuestRequired == 0 ? "No" : "Yes" }}</td>
           <td>{{ referenceLoot.GroupId }}</td>
           <td>{{ referenceLoot.MinCount }}</td>
           <td>{{ referenceLoot.MaxCount }}</td>
@@ -201,7 +194,7 @@
           <td><a ng-href="./#/item/{{ itemLoot.Entry }}">{{ itemLoot.name }}</a></td>
           <td>{{ itemLoot.Reference }}</td>
           <td>{{ itemLoot.Chance }}</td>
-          <td><a ng-href="./#/quest/{{ itemLoot.QuestRequired }}">{{ itemLoot.QuestRequired }}</a></td>
+          <td>{{ itemLoot.QuestRequired == 0 ? "No" : "Yes" }}<td>
           <td>{{ itemLoot.GroupId }}</td>
           <td>{{ itemLoot.MinCount }}</td>
           <td>{{ itemLoot.MaxCount }}</td>
@@ -225,7 +218,7 @@
           <td>{{ fishingLoot.Entry }}</td>
           <td>{{ fishingLoot.Reference }}</td>
           <td>{{ fishingLoot.Chance }}</td>
-          <td><a ng-href="./#/quest/{{ fishingLoot.QuestRequired }}">{{ fishingLoot.QuestRequired }}</a></td>
+          <td>{{ fishingLoot.QuestRequired == 0 ? "No" : "Yes" }}</td>
           <td>{{ fishingLoot.GroupId }}</td>
           <td>{{ fishingLoot.MinCount }}</td>
           <td>{{ fishingLoot.MaxCount }}</td>
@@ -251,7 +244,7 @@
           <td><a ng-href="./#/item/{{ disenchantLoot.Entry }}">{{ disenchantLoot.name }}</a></td>
           <td>{{ disenchantLoot.Reference }}</td>
           <td>{{ disenchantLoot.Chance }}</td>
-          <td><a ng-href="./#/quest/{{ disenchantLoot.QuestRequired }}">{{ disenchantLoot.QuestRequired }}</a></td>
+          <td>{{ disenchantLoot.QuestRequired == 0 ? "No" : "Yes" }}</td>
           <td>{{ disenchantLoot.GroupId }}</td>
           <td>{{ disenchantLoot.MinCount }}</td>
           <td>{{ disenchantLoot.MaxCount }}</td>
@@ -275,7 +268,7 @@
           <td>{{ prospectingLoot.Entry }}</td>
           <td>{{ prospectingLoot.Reference }}</td>
           <td>{{ prospectingLoot.Chance }}</td>
-          <td><a ng-href="./#/quest/{{ prospectingLoot.QuestRequired }}">{{ prospectingLoot.QuestRequired }}</a></td>
+          <td>{{ prospectingLoot.QuestRequired == 0 ? "No" : "Yes" }}</td>
           <td>{{ prospectingLoot.GroupId }}</td>
           <td>{{ prospectingLoot.MinCount }}</td>
           <td>{{ prospectingLoot.MaxCount }}</td>
@@ -299,7 +292,7 @@
           <td>{{ millingLoot.Entry }}</td>
           <td>{{ millingLoot.Reference }}</td>
           <td>{{ millingLoot.Chance }}</td>
-          <td><a ng-href="./#/quest/{{ millingLoot.QuestRequired }}">{{ millingLoot.QuestRequired }}</a></td>
+          <td>{{ millingLoot.QuestRequired == 0 ? "No" : "Yes" }}</td>
           <td>{{ millingLoot.GroupId }}</td>
           <td>{{ millingLoot.MinCount }}</td>
           <td>{{ millingLoot.MaxCount }}</td>
@@ -325,7 +318,7 @@
           <td><a ng-href="./#/npc/{{ pickpocketingLoot.Entry }}">{{ pickpocketingLoot.name }}</a></td>
           <td>{{ pickpocketingLoot.Reference }}</td>
           <td>{{ pickpocketingLoot.Chance }}</td>
-          <td><a ng-href="./#/quest/{{ pickpocketingLoot.QuestRequired }}">{{ pickpocketingLoot.QuestRequired }}</a></td>
+          <td>{{ pickpocketingLoot.QuestRequired == 0 ? "No" : "Yes" }}</td>
           <td>{{ pickpocketingLoot.GroupId }}</td>
           <td>{{ pickpocketingLoot.MinCount }}</td>
           <td>{{ pickpocketingLoot.MaxCount }}</td>
@@ -349,7 +342,7 @@
           <td>{{ spellLoot.Entry }}</td>
           <td>{{ spellLoot.Reference }}</td>
           <td>{{ spellLoot.Chance }}</td>
-          <td><a ng-href="./#/quest/{{ spellLoot.QuestRequired }}">{{ spellLoot.QuestRequired }}</a></td>
+          <td>{{ spellLoot.QuestRequired == 0 ? "No" : "Yes" }}</td>
           <td>{{ spellLoot.GroupId }}</td>
           <td>{{ spellLoot.MinCount }}</td>
           <td>{{ spellLoot.MaxCount }}</td>

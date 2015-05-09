@@ -12,6 +12,34 @@
       if (data.length > 0) {
         $scope.template = data[0];
 
+        switch(parseInt($scope.template.Quality))
+        {
+          case 0:
+            $scope.template.QualityText = "Grey Poor";
+            break;
+          case 1:
+            $scope.template.QualityText = "White Common";
+            break;
+          case 2:
+            $scope.template.QualityText = "Green Uncommon";
+            break;
+          case 3:
+            $scope.template.QualityText = "Blue Rare";
+            break;
+          case 4:
+            $scope.template.QualityText = "Purple Epic";
+            break;
+          case 5:
+            $scope.template.QualityText = "Orange Legendary";
+            break;
+          case 6:
+            $scope.template.QualityText = "Red Artifact";
+            break;
+          case 7:
+            $scope.template.QualityText = "Gold Heirloom";
+            break;
+        }
+
         if($scope.template.startquest != 0)
         {
           $http.get( app.api + "quest/template/title/" + $scope.template.startquest )
