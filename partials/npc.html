@@ -45,27 +45,27 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-npc-spawn" heading="Spawns ({{ npcSpawnsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
-        <th class="text-center">GUID</th>
-        <th class="text-center">map</th>
-        <th class="text-center">zoneId</th>
-        <th class="text-center">areaId</th>
-        <th class="text-center">spawnMask</th>
-        <th class="text-center">phaseMask</th>
-        <th class="text-center">modelid</th>
-        <th class="text-center">equipment_id</th>
-        <th class="text-center">position_x</th>
-        <th class="text-center">position_y</th>
-        <th class="text-center">position_z</th>
-        <th class="text-center">orientation</th>
-        <th class="text-center">spawntimesecs</th>
-        <th class="text-center">spawndist</th>
-        <th class="text-center">VerifiedBuild</th>
+        <th class="text-center" ts-criteria="GUID|parseInt">GUID</th>
+        <th class="text-center" ts-criteria="map|parseInt">map</th>
+        <th class="text-center" ts-criteria="zoneId|parseInt">zoneId</th>
+        <th class="text-center" ts-criteria="areaId|parseInt">areaId</th>
+        <th class="text-center" ts-criteria="spawnMask|parseInt">spawnMask</th>
+        <th class="text-center" ts-criteria="phaseMask|parseInt">phaseMask</th>
+        <th class="text-center" ts-criteria="modelid|parseInt">modelid</th>
+        <th class="text-center" ts-criteria="equipment_id|parseInt">equipment_id</th>
+        <th class="text-center" ts-criteria="position_x|parseFloat">position_x</th>
+        <th class="text-center" ts-criteria="position_y|parseFloat">position_y</th>
+        <th class="text-center" ts-criteria="position_z|parseFloat" ts-default="descending">position_z</th>
+        <th class="text-center" ts-criteria="orientation|parseInt">orientation</th>
+        <th class="text-center" ts-criteria="spawntimesecs|parseInt">spawntimesecs</th>
+        <th class="text-center" ts-criteria="spawndist|parseInt">spawndist</th>
+        <th class="text-center" ts-criteria="VerifiedBuild|parseInt">VerifiedBuild</th>
 
       </thead>
       <tbody>
-        <tr ng-repeat="npcSpawn in npcSpawns">
+        <tr ng-repeat="npcSpawn in npcSpawns" ts-repeat>
           <td>{{ npcSpawn.guid }}</td>
           <td>{{ npcSpawn.map }}</td>
           <td>{{ npcSpawn.zoneId }}</td>
@@ -100,19 +100,19 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-npc-loot" heading="Loot ({{ npcLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">Item ID</th>
         <th class="text-center">Item Name</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="npcLoot in npcLoots">
+        <tr ng-repeat="npcLoot in npcLoots" ts-repeat>
           <td><a ng-href="./#/item/{{ npcLoot.Item }}" ng-hide="npcLoot.Reference != 0">{{ npcLoot.Item }}</a></td>
           <td><a ng-href="./#/item/{{ npcLoot.Item }}" ng-hide="npcLoot.Reference != 0">{{ npcLoot.name }}</a></td>
           <td>{{ npcLoot.Reference }}</td>
@@ -126,19 +126,19 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-skinning-loot" heading="Skinning Loot ({{ skinningLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">NPC ID</th>
         <th class="text-center">NPC Name</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="skinningLoot in skinningLoots">
+        <tr ng-repeat="skinningLoot in skinningLoots" ts-repeat>
           <td><a ng-href="./#/item/{{ skinningLoot.Item }}" ng-hide="skinningLoot.Reference != 0">{{ skinningLoot.Item }}</a></td>
           <td><a ng-href="./#/item/{{ skinningLoot.Item }}" ng-hide="skinningLoot.Reference != 0">{{ skinningLoot.name }}</a></td>
           <td>{{ skinningLoot.Reference }}</td>
@@ -152,19 +152,19 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-pickpocketing-loot" heading="Pickpocketing Loot ({{ pickpocketingLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">NPC ID</th>
         <th class="text-center">NPC Name</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="pickpocketingLoot in pickpocketingLoots">
+        <tr ng-repeat="pickpocketingLoot in pickpocketingLoots" ts-repeat>
           <td><a ng-href="./#/item/{{ pickpocketingLoot.Item }}" ng-hide="pickpocketingLoot.Reference != 0">{{ pickpocketingLoot.Item }}</a></td>
           <td><a ng-href="./#/item/{{ pickpocketingLoot.Item }}" ng-hide="pickpocketingLoot.Reference != 0">{{ pickpocketingLoot.name }}</a></td>
           <td>{{ pickpocketingLoot.Reference }}</td>

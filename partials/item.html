@@ -75,19 +75,19 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-npc-loot" heading="Dropped by NPC ({{ npcLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">NPC ID</th>
         <th class="text-center">NPC Name</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="npcLoot in npcLoots">
+        <tr ng-repeat="npcLoot in npcLoots" ts-repeat>
           <td><a ng-href="./#/npc/{{ npcLoot.Entry }}">{{ npcLoot.Entry }}</a></td>
           <td><a ng-href="./#/npc/{{ npcLoot.Entry }}">{{ npcLoot.name }}</a></td>
           <td>{{ npcLoot.Reference }}</td>
@@ -101,19 +101,19 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-skinning-loot" heading="Skinned from NPC ({{ skinningLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">NPC ID</th>
         <th class="text-center">NPC Name</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="skinningLoot in skinningLoots">
+        <tr ng-repeat="skinningLoot in skinningLoots" ts-repeat>
           <td><a ng-href="./#/npc/{{ skinningLoot.Entry }}">{{ skinningLoot.Entry }}</a></td>
           <td><a ng-href="./#/npc/{{ skinningLoot.Entry }}">{{ skinningLoot.name }}</a></td>
           <td>{{ skinningLoot.Reference }}</td>
@@ -127,19 +127,19 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-gameobject-loot" heading="Contained in Gameobject ({{ gameobjectLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">GameObject ID</th>
         <th class="text-center">GameObject Name</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="gameobjectLoot in gameobjectLoots">
+        <tr ng-repeat="gameobjectLoot in gameobjectLoots" ts-repeat>
           <td>{{ gameobjectLoot.Entry }}</td>
           <td>{{ gameobjectLoot.name }}</td>
           <td>{{ gameobjectLoot.Reference }}</td>
@@ -153,18 +153,18 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-reference-loot" heading="Contained in Reference ({{ referenceLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">Reference ID</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="referenceLoot in referenceLoots">
+        <tr ng-repeat="referenceLoot in referenceLoots" ts-repeat>
           <td>{{ referenceLoot.Entry }}</td>
           <td>{{ referenceLoot.Reference }}</td>
           <td>{{ referenceLoot.Chance }}</td>
@@ -177,19 +177,19 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-item-loot" heading="Dropped by Item ({{ itemLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">Item ID</th>
         <th class="text-center">Item Name</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="itemLoot in itemLoots">
+        <tr ng-repeat="itemLoot in itemLoots" ts-repeat>
           <td><a ng-href="./#/item/{{ itemLoot.Entry }}">{{ itemLoot.Entry }}</a></td>
           <td><a ng-href="./#/item/{{ itemLoot.Entry }}">{{ itemLoot.name }}</a></td>
           <td>{{ itemLoot.Reference }}</td>
@@ -203,18 +203,18 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-fishing-loot" heading="Fished in ({{ fishingLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">Fishing ID</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="fishingLoot in fishingLoots">
+        <tr ng-repeat="fishingLoot in fishingLoots" ts-repeat>
           <td>{{ fishingLoot.Entry }}</td>
           <td>{{ fishingLoot.Reference }}</td>
           <td>{{ fishingLoot.Chance }}</td>
@@ -227,19 +227,19 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-disenchant-loot" heading="Disenchanted from Disenchant ({{ disenchantLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">Item ID</th>
         <th class="text-center">Item Name</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="disenchantLoot in disenchantLoots">
+        <tr ng-repeat="disenchantLoot in disenchantLoots" ts-repeat>
           <td><a ng-href="./#/item/{{ disenchantLoot.Entry }}">{{ disenchantLoot.Entry }}</a></td>
           <td><a ng-href="./#/item/{{ disenchantLoot.Entry }}">{{ disenchantLoot.name }}</a></td>
           <td>{{ disenchantLoot.Reference }}</td>
@@ -253,18 +253,18 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-prospecting-loot" heading="Dropped by Prospecting ({{ prospectingLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">Prospecting ID</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="prospectingLoot in prospectingLoots">
+        <tr ng-repeat="prospectingLoot in prospectingLoots" ts-repeat>
           <td>{{ prospectingLoot.Entry }}</td>
           <td>{{ prospectingLoot.Reference }}</td>
           <td>{{ prospectingLoot.Chance }}</td>
@@ -277,18 +277,18 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-milling-loot" heading="Dropped by Milling ({{ millingLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">Milling ID</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="millingLoot in millingLoots">
+        <tr ng-repeat="millingLoot in millingLoots" ts-repeat>
           <td>{{ millingLoot.Entry }}</td>
           <td>{{ millingLoot.Reference }}</td>
           <td>{{ millingLoot.Chance }}</td>
@@ -301,19 +301,19 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-pickpocketing-loot" heading="Pickpocked from ({{ pickpocketingLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">NPC ID</th>
         <th class="text-center">NPC Name</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="pickpocketingLoot in pickpocketingLoots">
+        <tr ng-repeat="pickpocketingLoot in pickpocketingLoots" ts-repeat>
           <td><a ng-href="./#/npc/{{ pickpocketingLoot.Entry }}">{{ pickpocketingLoot.Entry }}</a></td>
           <td><a ng-href="./#/npc/{{ pickpocketingLoot.Entry }}">{{ pickpocketingLoot.name }}</a></td>
           <td>{{ pickpocketingLoot.Reference }}</td>
@@ -327,18 +327,18 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-spell-loot" heading="Dropped by spell ({{ spellLootsCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
         <th class="text-center">Spell ID</th>
-        <th class="text-center">Reference</th>
-        <th class="text-center">Chance</th>
-        <th class="text-center">Quest Required</th>
-        <th class="text-center">Group ID</th>
-        <th class="text-center">Min Count</th>
-        <th class="text-center">Max Count</th>
+        <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
+        <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
+        <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
+        <th class="text-center" ts-criteria="GroupID|parseInt">Group ID</th>
+        <th class="text-center" ts-criteria="MinCount|parseInt">Min Count</th>
+        <th class="text-center" ts-criteria="MaxCount|parseInt">Max Count</th>
       </thead>
       <tbody>
-        <tr ng-repeat="spellLoot in spellLoots">
+        <tr ng-repeat="spellLoot in spellLoots" ts-repeat>
           <td>{{ spellLoot.Entry }}</td>
           <td>{{ spellLoot.Reference }}</td>
           <td>{{ spellLoot.Chance }}</td>
