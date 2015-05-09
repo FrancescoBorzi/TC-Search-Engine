@@ -113,8 +113,8 @@
       </thead>
       <tbody>
         <tr ng-repeat="npcLoot in npcLoots">
-          <td><a ng-href="./#/item/{{ npcLoot.Item }}">{{ npcLoot.Item }}</a></td>
-          <td><a ng-href="./#/item/{{ npcLoot.Item }}">{{ npcLoot.name }}</a></td>
+          <td><a ng-href="./#/item/{{ npcLoot.Item }}" ng-hide="npcLoot.Reference != 0">{{ npcLoot.Item }}</a></td>
+          <td><a ng-href="./#/item/{{ npcLoot.Item }}" ng-hide="npcLoot.Reference != 0">{{ npcLoot.name }}</a></td>
           <td>{{ npcLoot.Reference }}</td>
           <td>{{ npcLoot.Chance }}</td>
           <td><a ng-href="./#/quest/{{ npcLoot.QuestRequired }}">{{ npcLoot.QuestRequired }}</a></td>
@@ -139,8 +139,8 @@
       </thead>
       <tbody>
         <tr ng-repeat="skinningLoot in skinningLoots">
-          <td><a ng-href="./#/item/{{ skinningLoot.Item }}">{{ skinningLoot.Item }}</a></td>
-          <td><a ng-href="./#/item/{{ skinningLoot.Item }}">{{ skinningLoot.name }}</a></td>
+          <td><a ng-href="./#/item/{{ skinningLoot.Item }}" ng-hide="skinningLoot.Reference != 0">{{ skinningLoot.Item }}</a></td>
+          <td><a ng-href="./#/item/{{ skinningLoot.Item }}" ng-hide="skinningLoot.Reference != 0">{{ skinningLoot.name }}</a></td>
           <td>{{ skinningLoot.Reference }}</td>
           <td>{{ skinningLoot.Chance }}</td>
           <td><a ng-href="./#/quest/{{ skinningLoot.QuestRequired }}">{{ skinningLoot.QuestRequired }}</a></td>
@@ -165,8 +165,8 @@
       </thead>
       <tbody>
         <tr ng-repeat="pickpocketingLoot in pickpocketingLoots">
-          <td><a ng-href="./#/item/{{ pickpocketingLoot.Item }}">{{ pickpocketingLoot.Item }}</a></td>
-          <td><a ng-href="./#/item/{{ pickpocketingLoot.Item }}">{{ pickpocketingLoot.name }}</a></td>
+          <td><a ng-href="./#/item/{{ pickpocketingLoot.Item }}" ng-hide="pickpocketingLoot.Reference != 0">{{ pickpocketingLoot.Item }}</a></td>
+          <td><a ng-href="./#/item/{{ pickpocketingLoot.Item }}" ng-hide="pickpocketingLoot.Reference != 0">{{ pickpocketingLoot.name }}</a></td>
           <td>{{ pickpocketingLoot.Reference }}</td>
           <td>{{ pickpocketingLoot.Chance }}</td>
           <td><a ng-href="./#/quest/{{ pickpocketingLoot.QuestRequired }}">{{ pickpocketingLoot.QuestRequired }}</a></td>
