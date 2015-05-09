@@ -1,9 +1,6 @@
 (function () {
   var app = angular.module('engine');
 
-  // TC-JSON-API
-  app.api = "http://localhost/~Shin/TC-JSON-API/public/index.php/";
-
   // routing
   app.config(function($stateProvider, $urlRouterProvider) {
 
