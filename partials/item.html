@@ -255,7 +255,8 @@
   <tab class="hidden" id="tab-prospecting-loot" heading="Dropped by Prospecting ({{ prospectingLootsCount }})">
     <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
-        <th class="text-center" ts-criteria="Entry|parseInt">Prospecting ID</th>
+        <th class="text-center" ts-criteria="Entry|parseInt">Item ID</th>
+        <th class="text-center" ts-criteria="Item|parseInt">Item Name</th>
         <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
         <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
         <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
@@ -265,7 +266,8 @@
       </thead>
       <tbody>
         <tr ng-repeat="prospectingLoot in prospectingLoots" ts-repeat>
-          <td>{{ prospectingLoot.Entry }}</td>
+          <td><a ng-href="./#/item/{{ prospectingLoot.Entry }}">{{ prospectingLoot.Entry }}</a></td>
+          <td><a ng-href="./#/item/{{ prospectingLoot.Entry }}">{{ prospectingLoot.name }}</a></td>
           <td>{{ prospectingLoot.Reference }}</td>
           <td>{{ prospectingLoot.Chance }}</td>
           <td>{{ prospectingLoot.QuestRequired == 0 ? "No" : "Yes" }}</td>
