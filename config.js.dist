@@ -5,6 +5,6 @@
   app.api = "../TC-JSON-API/public/index.php/";
 
   /* Edit with path of the SpellWork API e.g http://trinitycore.cloudapp.net/spells/ */
-  app.spellsApi = ""
+  app.spellsApi = "";
 
 })();

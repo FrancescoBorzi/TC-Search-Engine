@@ -341,7 +341,7 @@
       </thead>
       <tbody>
         <tr ng-repeat="spellLoot in spellLoots" ts-repeat>
-          <td>{{ spellLoot.Entry }}</td>
+          <td><a ng-href="./#/spell/{{ spellLoot.Entry }}">{{ spellLoot.Entry }}</td>
           <td>{{ spellLoot.Reference }}</td>
           <td>{{ spellLoot.Chance }}</td>
           <td>{{ spellLoot.QuestRequired == 0 ? "No" : "Yes" }}</td>
