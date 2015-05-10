@@ -102,8 +102,8 @@
   <tab class="hidden" id="tab-npc-loot" heading="Loot ({{ npcLootsCount }})">
     <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
-        <th class="text-center">Item ID</th>
-        <th class="text-center">Item Name</th>
+        <th class="text-center" ts-criteria="Item|parseInt">Item ID</th>
+        <th class="text-center" ts-criteria="name|lowercase">Item Name</th>
         <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
         <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
         <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
@@ -128,8 +128,8 @@
   <tab class="hidden" id="tab-skinning-loot" heading="Skinning Loot ({{ skinningLootsCount }})">
     <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
-        <th class="text-center">NPC ID</th>
-        <th class="text-center">NPC Name</th>
+        <th class="text-center" ts-criteria="Item|parseInt">NPC ID</th>
+        <th class="text-center" ts-criteria="name|lowercase">NPC Name</th>
         <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
         <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
         <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
@@ -154,8 +154,8 @@
   <tab class="hidden" id="tab-pickpocketing-loot" heading="Pickpocketing Loot ({{ pickpocketingLootsCount }})">
     <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
-        <th class="text-center">NPC ID</th>
-        <th class="text-center">NPC Name</th>
+        <th class="text-center" ts-criteria="Item|parseInt">NPC ID</th>
+        <th class="text-center" ts-criteria="name|lowercase">NPC Name</th>
         <th class="text-center" ts-criteria="Reference|parseInt">Reference</th>
         <th class="text-center" ts-criteria="Chance|parseFloat" ts-default="descending">Chance</th>
         <th class="text-center" ts-criteria="QuestRequired|lowercase">Quest Required</th>
@@ -178,13 +178,13 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-npc-queststarters" heading="Starts Quests ({{ npcQueststartersCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
-        <th class="text-center">Quest ID</th>
-        <th class="text-center">Quest Title</th>
+        <th class="text-center" ts-criteria="quest|parseInt">Quest ID</th>
+        <th class="text-center" ts-criteria="Title|lowercase">Quest Title</th>
       </thead>
       <tbody>
-        <tr ng-repeat="npcQueststarter in npcQueststarters">
+        <tr ng-repeat="npcQueststarter in npcQueststarters" ts-repeat>
           <td><a ng-href="./#/quest/{{ npcQueststarter.quest }}">{{ npcQueststarter.quest }}</a></td>
           <td><a ng-href="./#/quest/{{ npcQueststarter.quest }}">{{ npcQueststarter.Title }}</a></td>
         </tr>
@@ -192,13 +192,13 @@
     </table>
   </tab>
   <tab class="hidden" id="tab-npc-questenders" heading="Ends Quests ({{ npcQuestendersCount }})">
-    <table class="table table-striped table-condensed">
+    <table class="table table-striped table-condensed" ts-wrapper>
       <thead>
-        <th class="text-center">Quest ID</th>
-        <th class="text-center">Quest Title</th>
+        <th class="text-center" ts-criteria="quest|parseInt">Quest ID</th>
+        <th class="text-center" ts-criteria="Title|lowercase">Quest Title</th>
       </thead>
       <tbody>
-        <tr ng-repeat="npcQuestender in npcQuestenders">
+        <tr ng-repeat="npcQuestender in npcQuestenders" ts-repeat>
           <td><a ng-href="./#/quest/{{ npcQuestender.quest }}">{{ npcQuestender.quest }}</a></td>
           <td><a ng-href="./#/quest/{{ npcQuestender.quest }}">{{ npcQuestender.Title }}</a></td>
         </tr>
