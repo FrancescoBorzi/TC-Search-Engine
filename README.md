@@ -1,4 +1,4 @@
-# TC-Search-Engine
+# TrinityCore Search Engine
 
 The **TrinityCore Search Engine** is a web application built with [AngularJS](https://angularjs.org/) and [Bootstrap](http://getbootstrap.com) which allows to search into the database of [TrinityCore MMORPG framework](https://github.com/TrinityCore/TrinityCore) and displays datas to the user into a friendly format.
 
@@ -10,7 +10,7 @@ A live demo is available [here](http://usefulness.altervista.org/TC-Search-Engin
 
 ## Installation
 
-The application requires the [TrinityCore JSON RESTful API](https://github.com/ShinDarth/TC-JSON-API/), but it can be even in a separate machine.
+The application requires the [TrinityCore JSON RESTful API](https://github.com/ShinDarth/TC-JSON-API/) to access to the **world** database, but it can be even in a separate machine.
 
 Clone the TC-Search-Engine folder inside your web server directory:
 
