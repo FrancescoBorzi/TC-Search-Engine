@@ -7,12 +7,12 @@
     $urlRouterProvider.otherwise("/home");
 
     $stateProvider
-      .state('home', {
+    .state('home', {
       url: '/home',
       controller: 'HomeController',
       templateUrl: 'partials/home.html'
     })
-      .state('npc', {
+    .state('npc', {
       url: '/npc/:id',
       controller: 'NpcController',
       templateUrl: 'partials/npc.html'
@@ -26,6 +26,11 @@
       url: '/quest/:id',
       controller: 'QuestController',
       templateUrl: 'partials/quest.html'
+    })
+    .state('spell', {
+      url: '/spell/:id',
+      controller: 'SpellController',
+      templateUrl: 'partials/spell.html'
     });
 
 
