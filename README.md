@@ -2,7 +2,9 @@
 
 The **TrinityCore Search Engine** is a web application built with [AngularJS](https://angularjs.org/) and [Bootstrap](http://getbootstrap.com) which allows to search into the database of [TrinityCore MMORPG framework](https://github.com/TrinityCore/TrinityCore) and displays datas to the user into a friendly format.
 
-It retrieves all datas querying the [TrinityCore JSON RESTful API](https://github.com/ShinDarth/TC-JSON-API/) and can currently show datas about **Items**, **NPCs** and **Quests**. 
+It retrieves all datas querying the [TrinityCore JSON RESTful API](https://github.com/ShinDarth/TC-JSON-API/) and can currently show datas about **Items**, **NPCs** and **Quests**.
+
+Optionally it can use the [SpellWorkWeb API](https://github.com/TrinityCore/spellwork_cs/tree/refactor) to display information about **Spells**. 
 
 ## Live Demo
 

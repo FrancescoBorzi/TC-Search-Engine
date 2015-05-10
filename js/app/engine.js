@@ -20,14 +20,17 @@
     $scope.showItems = true;
     $scope.showNPCs = true;
     $scope.showQuests = true;
+    $scope.showSpells = true;
 
     var itemPanel = angular.element(document.querySelector("#item-panel"));
     var npcPanel = angular.element(document.querySelector("#npc-panel"));
     var questPanel = angular.element(document.querySelector("#quest-panel"));
+    var spellPanel = angular.element(document.querySelector("#spell-panel"));
 
     var noItemsFound = angular.element(document.querySelector("#no-items-found"));
     var noNPCsFound = angular.element(document.querySelector("#no-npcs-found"));
     var noQuestsFound = angular.element(document.querySelector("#no-quests-found"));
+    var noSpellsFound = angular.element(document.querySelector("#no-spells-found"));
 
     $scope.search = function(searchstr) {
 
@@ -39,10 +42,12 @@
       itemPanel.addClass("hidden");
       npcPanel.addClass("hidden");
       questPanel.addClass("hidden");
+      spellPanel.addClass("hidden");
 
       noItemsFound.addClass("hidden");
       noNPCsFound.addClass("hidden");
       noQuestsFound.addClass("hidden");
+      noSpellsFound.addClass("hidden");
 
       /* looking for items... */
       request = app.api + "item/template/" + searchstr;
@@ -98,8 +103,28 @@
         console.log("Error in QUEST $http.get");
       });
 
+      /* looking for Spells... */
+      if (app.spellsApi) {
+        var request = app.spellsApi + "?search=" + searchstr;
+
+        $http.get( request )
+          .success(function(data, status, header, config) {
+
+          $scope.spells = data;
+          if ($scope.spells.length > 0) { // we found spells
+            spellPanel.removeClass("hidden");
+          } else {  // we didn't find any spells
+            noSpellsFound.removeClass("hidden");
+          }
+
+        })
+          .error(function(data, status, header, config) {
+          console.log("Error in SPELL $http.get");
+        });
+      }
+
     };
 
   });
 
-})()
+})();
