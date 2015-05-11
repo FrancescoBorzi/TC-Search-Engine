@@ -1,9 +1,11 @@
 (function () {
   var app = angular.module('engine', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'tableSort']);
 
-  app.controller("HomeController", function($scope, $http) {
+  app.controller("HomeController", function($scope, $rootScope, $http) {
 
     var request = app.api + "version";
+
+    $scope.searchstr = $rootScope.history;
 
     $http.get( request )
       .success(function(data, status, header, config) {
@@ -38,6 +40,8 @@
         alert("Please insert a string of at least 4 characters.");
         return;
       }
+
+      $rootScope.history = searchstr;
 
       itemPanel.addClass("hidden");
       npcPanel.addClass("hidden");
