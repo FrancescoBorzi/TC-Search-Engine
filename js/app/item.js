@@ -1,4 +1,8 @@
+/*jslint browser: true, white: true*/
+/*global angular, console, alert*/
+
 (function () {
+  'use strict';
 
   var app = angular.module('engine');
 
@@ -12,7 +16,7 @@
       if (data.length > 0) {
         $scope.template = data[0];
 
-        switch(parseInt($scope.template.Quality))
+        switch(parseInt($scope.template.Quality, 10))
         {
           case 0:
             $scope.template.QualityText = "Grey Poor";
@@ -40,7 +44,7 @@
             break;
         }
 
-        if($scope.template.startquest != 0)
+        if($scope.template.startquest !== 0)
         {
           $http.get( app.api + "quest/template/title/" + $scope.template.startquest )
             .success(function(data, status, header, config) {
@@ -251,4 +255,4 @@
 
   });
 
-})()
+}());

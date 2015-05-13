@@ -1,19 +1,32 @@
+/*jslint browser: true, white: true*/
+/*global angular, console, alert*/
+
 (function () {
+  'use strict';
   var app = angular.module('engine', ['ui.router', 'ui.bootstrap', 'chieffancypants.loadingBar', 'tableSort']);
 
   app.controller("HomeController", function($scope, $rootScope, $http) {
 
-    var request = app.api + "version";
+    var request = app.api + "version",
+        itemPanel = angular.element(document.querySelector("#item-panel")),
+        npcPanel = angular.element(document.querySelector("#npc-panel")),
+        questPanel = angular.element(document.querySelector("#quest-panel")),
+        spellPanel = angular.element(document.querySelector("#spell-panel")),
+        noItemsFound = angular.element(document.querySelector("#no-items-found")),
+        noNPCsFound = angular.element(document.querySelector("#no-npcs-found")),
+        noQuestsFound = angular.element(document.querySelector("#no-quests-found")),
+        noSpellsFound = angular.element(document.querySelector("#no-spells-found"));
 
     $scope.searchstr = $rootScope.history;
 
     $http.get( request )
       .success(function(data, status, header, config) {
 
-      if (data.length > 0)
+      if (data.length > 0) {
         $scope.version = data[0];
-      else
+      } else {
         console.log("Error while retrieving database version.");
+      }
     })
       .error(function(data, status, header, config) {
       console.log("Error in VERSION $http.get request");
@@ -23,16 +36,6 @@
     $scope.showNPCs = true;
     $scope.showQuests = true;
     $scope.showSpells = true;
-
-    var itemPanel = angular.element(document.querySelector("#item-panel"));
-    var npcPanel = angular.element(document.querySelector("#npc-panel"));
-    var questPanel = angular.element(document.querySelector("#quest-panel"));
-    var spellPanel = angular.element(document.querySelector("#spell-panel"));
-
-    var noItemsFound = angular.element(document.querySelector("#no-items-found"));
-    var noNPCsFound = angular.element(document.querySelector("#no-npcs-found"));
-    var noQuestsFound = angular.element(document.querySelector("#no-quests-found"));
-    var noSpellsFound = angular.element(document.querySelector("#no-spells-found"));
 
     $scope.search = function(searchstr) {
 
@@ -72,7 +75,7 @@
       });
 
       /* looking for NPCs... */
-      var request = app.api + "creature/template/" + searchstr;
+      request = app.api + "creature/template/" + searchstr;
 
       $http.get( request )
         .success(function(data, status, header, config) {
@@ -90,7 +93,7 @@
       });
 
       /* looking for Quests... */
-      var request = app.api + "quest/template/" + searchstr;
+      request = app.api + "quest/template/" + searchstr;
 
       $http.get( request )
         .success(function(data, status, header, config) {
@@ -109,7 +112,7 @@
 
       /* looking for Spells... */
       if (app.spellsApi) {
-        var request = app.spellsApi + "?search=" + searchstr;
+        request = app.spellsApi + "?search=" + searchstr;
 
         $http.get( request )
           .success(function(data, status, header, config) {
@@ -131,4 +134,4 @@
 
   });
 
-})();
+}());
