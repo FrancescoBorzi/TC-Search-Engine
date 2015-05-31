@@ -8,7 +8,7 @@ Optionally it can use the [SpellWorkWeb API](https://github.com/TrinityCore/spel
 
 ## Live Demo
 
-A live demo is available [here](http://usefulness.altervista.org/TC-Search-Engine/).
+A live demo is available [here](http://shinworld.altervista.org/TC-Search-Engine/).
 
 ## Installation
 
