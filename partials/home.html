@@ -70,13 +70,13 @@
       <table class="table table-striped table-condensed">
         <thead>
           <th class="text-center">ID</th>
-          <th class="text-center">Title</th>
+          <th class="text-center">LogTitle</th>
           <th class="text-center">MinLevel</th>
         </thead>
         <tbody>
           <tr ng-repeat="quest in quests">
-            <td class="text-center"><a ng-href="./#/quest/{{ quest.Id }}">{{ quest.Id }}</a></td>
-            <td class="text-center"><a ng-href="./#/quest/{{ quest.Id }}">{{ quest.Title }}</a></td>
+            <td class="text-center"><a ng-href="./#/quest/{{ quest.ID }}">{{ quest.ID }}</a></td>
+            <td class="text-center"><a ng-href="./#/quest/{{ quest.ID }}">{{ quest.LogTitle }}</a></td>
             <td>{{ quest.MinLevel }}</td>
           </tr>
         </tbody>

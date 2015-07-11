@@ -1,34 +1,22 @@
 <a href="./#/" class="btn btn-primary btn-sm">&#8592;  Home</a>
 
-<p class="h2 text-center">[Quest] <strong>{{ template.Id }}</strong> (<strong>{{template.Title}}</strong>)</p>
+<p class="h2 text-center">[Quest] <strong>{{ template.ID }}</strong> (<strong>{{ template.LogTitle }}</strong>)</p>
 <br>
 <table class="table table-striped table-condensed table-bordered template-table">
   <thead>
     <tr>
       <th class="text-center">ID</th>
-      <th class="text-center">{{template.Id}}</th>
+      <th class="text-center">{{template.ID}}</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>Name</td>
-      <td>{{ template.Title }}</td>
-    </tr>
-    <tr>
-      <td>Level</td>
-      <td>{{ template.Level }}</td>
+      <td>{{ template.LogTitle }}</td>
     </tr>
     <tr>
       <td>MinLevel</td>
       <td>{{ template.MinLevel }}</td>
-    </tr>
-    <tr>
-      <td>MaxLevel</td>
-      <td>{{ template.MaxLevel }}</td>
-    </tr>
-    <tr>
-      <td>SuggestedPlayers</td>
-      <td>{{ template.SuggestedPlayers }}</td>
     </tr>
   </tbody>
 </table>
