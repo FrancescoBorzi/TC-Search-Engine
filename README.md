@@ -30,4 +30,4 @@ If you have an external server providing the API, set it like:
 
 ### License
 
-The TrinityCore Search Engine is open-sourced software licensed under the [GNU GPL license](https://github.com/ShinDarth/TC-Search-Engine/blob/master/LICENSE).
+The TrinityCore Search Engine is open-sourced software licensed under the [GNU AGPL license](https://github.com/ShinDarth/TC-Search-Engine/blob/master/LICENSE).
