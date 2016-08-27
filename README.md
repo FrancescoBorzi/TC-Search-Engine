@@ -28,6 +28,15 @@ If you have an external server providing the API, set it like:
 
 `app.api = "http://www.your.external.server.org/path/to/TC-JSON-API/public/index.php/";`
 
+
+## Contribute
+
+You can help us [opening a new issue](https://github.com/ShinDarth/TC-Search-Engine/issues/new) to report a bug or a suggestion
+
+or you can donate to support us
+
+[![Donate](https://www.paypal.com/en_GB/i/btn/btn_donateCC_LG.gif "Donate")](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=52AZFFD86N39Q)
+
 ### License
 
 The TrinityCore Search Engine is open-sourced software licensed under the [GNU AGPL license](https://github.com/ShinDarth/TC-Search-Engine/blob/master/LICENSE).
